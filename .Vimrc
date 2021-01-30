@@ -20,7 +20,7 @@ set nu "line numbers
 set smartcase
 set incsearch
 "-----------------------------------------------------
-set nocompatible              " be iMproved, required
+set nocompatible              " be iMproved, required so that vim won't run in vi mode
 filetype off                  " required
 
 " set the runtime path to include Vundle and initialize
@@ -32,17 +32,20 @@ call vundle#begin()
 " All of your Plugins must be added before the following line
 ""*******************************************************************(Plugins)
 Plugin 'gmarik/Vundle.vim'
-"adding NerdTree
-Plugin 'scrooloose/nerdtree'
+"adding                            NerdTree
+Plugin 'preservim/nerdtree'
+"Pure                              Dark ColorScheme
+Plugin 'fcpg/vim-fahrenheit'
+"Grayish                           Black Theme
+Plugin 'tomasr/molokai'
+"                                  FileFinder
+Plugin 'ctrlpvim/ctrlp.vim'
+"Syntax Checker &                  linter
+Plugin 'vim-syntastic/syntastic'
+"                                   Github Stuffs
+Plugin 'tpope/vim-fugitive'
 ""*******************************************************************
 
 
 call vundle#end()            " required
 filetype plugin indent on    " required
-
-" Brief help
-" :PluginList       - lists configured plugins
-" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
-" :PluginSearch foo - searches for foo; append `!` to refresh local cache
-" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
-" :PluginSearch ...PlugingName or Type...
