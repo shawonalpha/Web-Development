@@ -4,6 +4,7 @@
 syntax on
 set noerrorbells
 
+
 set tabstop=4 softtabstop=4
 set smartindent
 
@@ -19,25 +20,26 @@ set nu "line numbers
 
 set smartcase
 set incsearch
-"-----------------------------------------------------
-set nocompatible              " be iMproved, required so that vim won't run in vi mode
+"-----------------------------------------------------{Vundle Stuffs}------
+set nocompatible              " be iMproved, required...only vim mode no vi
 filetype off                  " required
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+call vundle#begin('~/.vim/plug_ins')
 
+" all the plugins are in ./vim/plug_ins
 " let Vundle manage Vundle, required...
 ""//** note that Bundle was the old syntax Plugin is the latest one
-" All of your Plugins must be added before the following line
+" All of your Plugins must be added after the following line
 ""*******************************************************************(Plugins)
 Plugin 'gmarik/Vundle.vim'
 "adding                            NerdTree
 Plugin 'preservim/nerdtree'
 "Pure                              Dark ColorScheme
 Plugin 'fcpg/vim-fahrenheit'
-"Grayish                           Black Theme
-Plugin 'tomasr/molokai'
+"                               Grayish Black Theme
+Plugin 'patstockwell/vim-monokai-tasty'
 "                                  FileFinder
 Plugin 'ctrlpvim/ctrlp.vim'
 "Syntax Checker &                  linter
@@ -49,3 +51,6 @@ Plugin 'tpope/vim-fugitive'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
+
+colorscheme vim-monokai-tasty
+"Plugin colorScheme must be added after the plugin declarations..else trouble
