@@ -3,12 +3,13 @@
 
 syntax on
 set noerrorbells
-
+set visualbell
+"the Visual Bell option turned off the beep noice in vim :)
 
 set tabstop=4 softtabstop=4
 set smartindent
 
-" i've intgentionally disables swap file...do at you own risk
+" i've intgentionally disabled swap file...do at you own risk
 " instead the undodir will contain all the records for further editing
 
 set noswapfile  
@@ -20,8 +21,22 @@ set nu "line numbers
 
 set smartcase
 set incsearch
+"removes for normal mode
+noremap <Up> <Nop>
+noremap <Down> <Nop>
+noremap <Left> <Nop>
+noremap <Right> <Nop>
+"removes for insert mode
+" This Evil Piece of code will haunt non Vim users for the rest of their lives
+inoremap <Up> <Nop>
+inoremap <Down> <Nop>
+inoremap <Left> <Nop>
+inoremap <Right> <Nop>
+inoremap <backspace> <Nop>
+
 "-----------------------------------------------------{Vundle Stuffs}------
 set nocompatible              " be iMproved, required...only vim mode no vi
+set showcmd           "the only line not needed here
 filetype off                  " required
 
 " set the runtime path to include Vundle and initialize
@@ -46,11 +61,13 @@ Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'vim-syntastic/syntastic'
 "                                   Github Stuffs
 Plugin 'tpope/vim-fugitive'
+"Surrounding Stuffs               " " {} ''
+Plugin 'tpope/vim-surround'
 ""*******************************************************************
 
 
 call vundle#end()            " required
 filetype plugin indent on    " required
-
+map <F2> :NERDTreeToggle<CR>
 colorscheme vim-monokai-tasty
 "Plugin colorScheme must be added after the plugin declarations..else trouble
